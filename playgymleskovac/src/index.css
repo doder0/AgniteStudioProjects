@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 50 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 50 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 50 100% 50%;
+
+    --radius: 0.25rem;
+
+    /* Custom gym theme */
+    --neon-yellow: 50 100% 50%;
+    --neon-yellow-glow: 50 100% 60%;
+    --dark-overlay: 0 0% 0%;
+    --gym-gray: 0 0% 20%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 0%, 0.9) 100%);
+    --gradient-card: linear-gradient(135deg, hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 6%, 1) 100%);
+    --gradient-yellow: linear-gradient(135deg, hsl(50, 100%, 50%) 0%, hsl(45, 100%, 55%) 100%);
+    
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsla(50, 100%, 50%, 0.3);
+    --shadow-neon-strong: 0 0 40px hsla(50, 100%, 50%, 0.5);
+    --shadow-card: 0 10px 40px hsla(0, 0%, 0%, 0.5);
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold uppercase tracking-tight;
+  }
+}
+
+@layer components {
+  .text-gradient-yellow {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-yellow);
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .neon-glow-strong {
+    box-shadow: var(--shadow-neon-strong);
+  }
+
+  .card-gym {
+    background: var(--gradient-card);
+    @apply border border-border;
+  }
+
+  .yellow-line {
+    @apply h-1 bg-primary;
+  }
+
+  .yellow-frame {
+    @apply border-2 border-primary;
+  }
+}
+
+@layer utilities {
+  .text-shadow-dark {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .italic-slant {
+    font-style: italic;
+    transform: skewX(-3deg);
+  }
+}
